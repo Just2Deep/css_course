@@ -22,6 +22,8 @@ body {
   align-items: center;
   flex-flow: row wrap;
   align-content: space-evenly;
+  gap: 1rem;
+  
 } 
 
 .box {
@@ -34,4 +36,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.box:nth-child(2) {
+  flex: 1 1 250px;
 }
