@@ -28,6 +28,13 @@ img {
 body {
   font-family: Nunito, sans-serif;
   min-height: 100vh;
+  background-color: aliceblue;
+  /* background-image: url("../img/bubbles.png"),
+    linear-gradient(to left, steelblue, #fff);
+  background-repeat: repeat-y, no-repeat;
+  background-position: right center; */
+  background: repeat-y right center url("../img/bubbles.png"), no-repeat linear-gradient(to left, steelblue, #fff);
+  background-size: 20%, auto;
 }
 
 .container {
@@ -76,4 +83,16 @@ body {
 .example img {
   width: 25%;
   height: auto;
+}
+
+.clip {
+  font-weight: 800;
+  font-size: 18rem;
+  text-align: center;
+  background-image: url("../img/scenic-2200x1331.png");
+  background-size: 100%;
+  text-transform: uppercase;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-clip: transparent;
 }
