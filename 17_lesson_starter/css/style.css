@@ -68,14 +68,46 @@ footer {
 }
 
 /* Medium Screens */
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 768px) {
 
   body {
-    background-color: green;
-    background-image: radial-gradient(whitesmoke, green);
+    background-color: gold;
+    background-image: radial-gradient(whitesmoke, gold);
+  }
+}
+
+/* Large Screens */
+@media screen and (min-width: 992px) {
+
+  body {
+    background-color: firebrick;
+    background-image: radial-gradient(whitesmoke, firebrick);
+  }
+}
+
+/* XL Screens */
+@media screen and (min-width: 1200px) {
+
+  body {
+    background-color: rebeccapurple;
+    background-image: radial-gradient(whitesmoke, rebeccapurple);
+  }
+}
+
+/* Mobile devices landscape */
+@media screen and (max-height: 425px) and (min-aspect-ratio: 7/4) {
+
+  body {
+    background-color: dodgerblue;
+    background-image: radial-gradient(whitesmoke, dodgerblue);
   }
 
   nav {
     display: none;
+  }
+
+  h1,
+  h2 {
+    font-size: 1.5rem;
   }
 }
