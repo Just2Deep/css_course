@@ -7,20 +7,52 @@
   box-sizing: border-box;
 }
 
+/* || VARIABLES */
+:root {
+  /* font */
+  --ff: "Nunito", sans-serif;
+  --fs: 1.5rem;
+  --fs-xl: 3rem;
+
+  /* color */
+  --bgcolor: #475569;
+  --altbgcolor: #1E293B;
+  --radial-color: whitesmoke;
+  --light-color: whitesmoke;
+  --dark-color: #000;
+
+  /* square */
+  --square-bgcolor: papayawhip;
+  --square-size: max(150px, 20vw);
+
+  /* general */
+  --padding: 0.5rem;
+  --shadow: 0 6px 5px -5px var(--dark-color);
+  --borders: 2px solid var(--dark-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bgcolor: #000;
+    --alt-bgcolor: #333;
+    --radial-color: rgb(217, 217, 217);
+    --square-bgcolor: rgb(202, 174, 202);
+  }
+}
+
 /* || GENERAL STYLES */
 body {
-  font: 1.5rem "Nunito", sans-serif;
+  font: var(--fs) var(--ff);
   min-height: 100vh;
 
-  background-color: #475569;
-  background-image: radial-gradient(whitesmoke, #475569);
+  background-color: var(--bgcolor);
+  background-image: radial-gradient(var(--radial-color), var(--bgcolor));
   display: flex;
   flex-direction: column;
 }
 
 header,
 nav,
-main,
 footer {
   display: grid;
   place-content: center;
@@ -31,8 +63,8 @@ footer {
 header,
 footer {
   position: sticky;
-  background-color: #1E293B;
-  color: whitesmoke;
+  background-color: var(--altbgcolor);
+  color: var(--light-color);
 }
 
 header {
@@ -40,16 +72,43 @@ header {
 }
 
 nav {
-  background-color: #fff;
-  color: #000;
-  padding: 0.5rem;
-  border-bottom: 2px solid #000;
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  padding: var(--padding);
+  border-bottom: var(--borders);
+  box-shadow: var(--shadow);
 }
 
 main {
   flex-grow: 1;
+
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-flow: row wrap;
+  gap: min(4vw, 15px);
 }
 
 footer {
   bottom: 0;
+}
+
+/* || FEATURES */
+
+.square--highlight {
+  --square-bgcolor: cornflowerblue;
+}
+
+
+.square {
+  background-color: var(--square-bgcolor);
+  width: var(--square-size);
+  height: var(--square-size);
+  border: var(--borders);
+  border-radius: 15px;
+  display: grid;
+  place-content: center;
+  font-size: var(--fs-xl);
+  box-shadow: var(--shadow);
 }
