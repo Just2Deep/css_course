@@ -26,3 +26,45 @@ header {
     background-color: var(--HEADER-BGCOLOR);
     color: var(--HEADER-COLOR);
 }
+
+.header-title-line {
+    padding: 0.25rem 0.5rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.menu-button {
+    background-color: transparent;
+    border: none;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.menu-icon,
+.menu-icon::before,
+.menu-icon::after {
+    background-color: var(--HEADER-COLOR);
+    width: 40px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    transition: all 0.5s;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+    content: "";
+}
+
+.menu-icon::before {
+    transform: translate(-20px, -12px);
+}
+
+.menu-icon::after {
+    transform: translate(-20px, 12px);
+}
